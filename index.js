@@ -4,6 +4,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+const authRoutes = require('./auth');
+app.use('/auth', authRoutes);
+
 let pedidos = [];
 
 app.post('/pedido', (req, res) => {
